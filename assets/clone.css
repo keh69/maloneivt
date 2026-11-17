@@ -88,61 +88,104 @@
   transform: translateY(-1px);
 }
 
-/* Buttons */
-.btn-primary {
+/* Buttons · taste-skill (Leonxlnx/taste-skill) 기준
+   - data-buttons="arrow" 모양: 주 버튼만 색을 채우고 끝에 화살표, 보조 버튼은 밑줄 글자 링크 + 화살표
+   - 버튼 한 쌍만 사용(주/보조). 그라데이션·그림자·유령 버튼 없음
+   - 높이 44px, 글자 16px, 좌우 24px, 모서리 8px(soft)
+   - 마우스 올림: 색 한 단계 + 화살표 3px 이동 / 누름: 1px 내려가며 살짝 작아짐 */
+.btn-primary,
+.btn-secondary,
+.btn-dark {
+  --btn-ease: cubic-bezier(.2, .8, .2, 1);
+  --btn-dur: 180ms;
+  --btn-glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M1.5 6h8.5M6.5 2.5 10 6l-3.5 3.5' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 14px 22px;
-  border-radius: 999px;
+  gap: 8px;
+  height: 44px;
+  padding: 0 24px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color var(--btn-dur) var(--btn-ease), color var(--btn-dur) var(--btn-ease),
+    border-color var(--btn-dur) var(--btn-ease), text-decoration-color var(--btn-dur) var(--btn-ease);
+}
+
+/* 주 버튼: 화면마다 하나만 채운 색 */
+.btn-primary {
+  background: var(--accent);
   color: #fff;
-  font-weight: 900;
-  background: linear-gradient(135deg, var(--accent), var(--gold));
-  box-shadow: 0 18px 46px rgba(200, 30, 30, .16);
-  transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
 }
 .btn-primary:hover {
-  transform: translateY(-1px);
-  filter: saturate(1.05);
-  box-shadow: 0 22px 54px rgba(200, 30, 30, .20);
+  background: color-mix(in oklab, var(--accent) 86%, var(--ink));
 }
 
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 14px 22px;
-  border-radius: 18px;
-  color: rgba(7, 17, 37, .92);
-  font-weight: 900;
-  background: rgba(255, 255, 255, .92);
-  border: 1px solid rgba(7, 17, 37, .12);
-  box-shadow: 0 14px 36px rgba(7, 17, 37, .10);
-  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
-}
-.btn-secondary:hover {
-  transform: translateY(-1px);
-  border-color: rgba(200, 30, 30, .22);
-  box-shadow: 0 18px 46px rgba(7, 17, 37, .14);
-}
-
+/* 보조 버튼(흰 버튼·남색 버튼): 버튼 높이의 밑줄 글자 링크 */
+.btn-secondary,
 .btn-dark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 22px;
-  border-radius: 18px;
-  color: #fff;
-  font-weight: 900;
-  background: linear-gradient(180deg, #0b152e, #071125);
-  box-shadow: 0 16px 44px rgba(7, 17, 37, .22);
-  transition: transform .15s ease, box-shadow .15s ease;
+  background: none;
+  color: var(--ink);
+  padding-inline: 8px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(7, 17, 37, .28);
 }
+.btn-secondary:hover,
 .btn-dark:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 20px 54px rgba(7, 17, 37, .26);
+  text-decoration-color: currentColor;
+}
+/* 어두운 첫 화면 위의 보조 버튼 */
+.hero-bg .btn-secondary {
+  color: #fff;
+  text-decoration-color: rgba(255, 255, 255, .45);
+}
+
+/* 화살표: 글꼴과 상관없이 같은 모양으로 그림 */
+.btn-primary::after,
+.btn-secondary::after,
+.btn-dark::after {
+  content: "";
+  flex: none;
+  width: 12px;
+  height: 12px;
+  margin-right: -2px;
+  background: currentColor;
+  -webkit-mask: var(--btn-glyph) center / contain no-repeat;
+  mask: var(--btn-glyph) center / contain no-repeat;
+  transition: transform var(--btn-dur) var(--btn-ease);
+}
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover::after,
+  .btn-secondary:hover::after,
+  .btn-dark:hover::after { transform: translateX(3px); }
+}
+
+.btn-primary:active,
+.btn-secondary:active,
+.btn-dark:active {
+  transform: translateY(1px) scale(.985);
+}
+
+/* 키보드 포커스: 바로 보이는 고리 */
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+.btn-dark:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.hero-bg .btn-secondary:focus-visible { outline-color: #fff; }
+
+.btn-primary:disabled,
+.btn-secondary:disabled,
+.btn-dark:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+  transform: none;
 }
 
 /* Cards */
