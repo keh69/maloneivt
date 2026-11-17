@@ -4,101 +4,89 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>사업영역 | 말론투자</title>
-    <meta name="description" content="말론투자의 네 가지 사업을 소개합니다." />
-    <meta name="theme-color" content="#172a24" />
-    <link rel="icon" href="../assets/malon-logo-icon-v4.svg" type="image/svg+xml" />
+    <meta name="description" content="말론투자 사업영역" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;600;700&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../assets/site.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script>
+      tailwind.config = { theme: { extend: { fontFamily: { sans: ["Noto Sans KR", "ui-sans-serif", "system-ui"] } } } };
+    </script>
+    <link rel="stylesheet" href="../assets/clone.css" />
   </head>
-
-  <body data-section="business" data-base="../">
-    <a class="skip" href="#main">본문 바로가기</a>
-
-    <aside class="law" aria-label="법령 안내">
-      <div class="wrap">
-        <span class="law__tag">공지</span>
-        <div>
-          <p>2024년 8월 14일 시행된 자본시장법에 따라 유사투자자문업은 댓글 등 양방향 소통을 이용한 영업을 할 수 없습니다. <strong>그래서 회원은 이 홈페이지에 글을 쓸 수 없습니다.</strong></p>
-          <small>금융투자상품이나 특정 주식의 판단·가치에 대한 문의는 받지 않습니다.</small>
+  <body class="font-sans mesh-bg text-slate-900">
+    <header class="fixed top-0 left-0 right-0 z-50">
+      <div class="glass-header">
+        <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+          <a class="flex items-center gap-3" href="../">
+            <img class="logo-icon logo-icon--sm" src="../assets/malon-logo-icon-v4.svg" alt="말론투자 로고" />
+            <div class="text-2xl font-black tracking-tight">말론투자</div>
+          </a>
+          <nav class="hidden md:flex items-center gap-2 text-sm font-bold">
+            <a class="nav-link" href="../">홈</a>
+            <a class="nav-link" href="../company/">회사소개</a>
+            <a class="nav-link" href="../business/">사업영역</a>
+            <a class="nav-link" href="../support/">고객지원</a>
+          </nav>
         </div>
-      </div>
-    </aside>
-
-    <header class="top">
-      <div class="wrap">
-        <a class="brand" href="../">
-          <img src="../assets/malon-logo-icon-v4.svg" alt="" width="34" height="34" />
-          <span>말론투자</span>
-        </a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu"><span>메뉴</span></button>
-        <nav class="menu" id="menu" aria-label="주 메뉴">
-          <a href="../company/" data-nav="company">회사소개</a>
-          <a href="../business/" data-nav="business">사업영역</a>
-          <a href="../support/" data-nav="support">고객지원</a>
-          <a href="../support/notice/" data-nav="notice">공지사항</a>
-          <a class="btn" href="../#apply">상담 신청</a>
-        </nav>
       </div>
     </header>
 
-    <main id="main">
-      <section class="page-head">
-        <div class="wrap">
-          <ol class="crumbs"><li><a href="../">홈</a></li><li>사업영역</li></ol>
-          <h1>사업영역</h1>
-          <p>꾸준한 투자 연구와 정리된 분석으로, 필요한 정보만 분명하게 전합니다.</p>
-        <nav class="tabs" aria-label="사업영역 하위 메뉴">
-          <a href="../business/">한눈에 보기</a>
-          <a href="../business/advisory/">유사투자자문</a>
-          <a href="../business/marketing/">글로벌 금융 마케팅</a>
-          <a href="../business/mcn/">MCN</a>
-          <a href="../business/vc/">벤처캐피탈</a>
-        </nav>
-
+    <main class="pt-[73px]">
+      <section class="hero-bg relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-[#071125]/85 via-[#071125]/45 to-transparent"></div>
+        <div class="relative max-w-6xl mx-auto px-5 py-16 md:py-20">
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-2 bg-white/10 text-white border border-white/15 rounded-full px-4 py-2 text-xs font-bold">
+              <span class="w-2 h-2 rounded-full" style="background: linear-gradient(135deg, var(--gold), var(--cyan));"></span>
+              <span>Business</span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-black mt-5 text-white break-keep">사업영역</h1>
+            <p class="text-white/80 mt-4 leading-relaxed">
+              끝없는 투자 연구와 구조화된 분석으로, 필요한 정보만 명확하게 전달합니다.
+            </p>
+          </div>
         </div>
       </section>
-      <section class="page-body">
-        <div class="wrap cols">
-          <aside><h2>네 가지 사업</h2></aside>
-          <ul class="links">
-            <li><a href="../business/advisory/"><strong>유사투자자문 서비스</strong><span>리서치를 바탕으로 한 시장 정보를 공지로 제공합니다.</span></a></li>
-            <li><a href="../business/marketing/"><strong>글로벌 금융 마케팅</strong><span>브랜드와 유입, 전환을 지표로 관리합니다.</span></a></li>
-            <li><a href="../business/mcn/"><strong>MCN 사업</strong><span>근거를 밝히는 금융 콘텐츠를 만듭니다.</span></a></li>
-            <li><a href="../business/vc/"><strong>벤처캐피탈</strong><span>성장 단계에 맞춰 혁신 기업을 돕습니다.</span></a></li>
-          </ul>
+
+      <section class="max-w-6xl mx-auto px-5 py-14 md:py-20">
+        <div class="grid md:grid-cols-2 gap-6">
+          <a class="card-soft card-border rounded-3xl p-7 lift block" href="./advisory/">
+            <div class="text-xs font-black tracking-widest uppercase" style="color: var(--muted);">01</div>
+            <div class="mt-2 text-2xl font-black" style="color: var(--ink);">유사투자자문 서비스</div>
+            <div class="mt-3 text-sm leading-relaxed" style="color: var(--muted);">리서치 기반 정보 제공 구조를 설계합니다.</div>
+          </a>
+          <a class="card-soft card-border rounded-3xl p-7 lift block" href="./marketing/">
+            <div class="text-xs font-black tracking-widest uppercase" style="color: var(--muted);">02</div>
+            <div class="mt-2 text-2xl font-black" style="color: var(--ink);">글로벌 금융 마케팅</div>
+            <div class="mt-3 text-sm leading-relaxed" style="color: var(--muted);">브랜드/유입/전환을 지표로 관리합니다.</div>
+          </a>
+          <a class="card-soft card-border rounded-3xl p-7 lift block" href="./mcn/">
+            <div class="text-xs font-black tracking-widest uppercase" style="color: var(--muted);">03</div>
+            <div class="mt-2 text-2xl font-black" style="color: var(--ink);">MCN 사업</div>
+            <div class="mt-3 text-sm leading-relaxed" style="color: var(--muted);">콘텐츠 품질과 신뢰를 우선합니다.</div>
+          </a>
+          <a class="card-soft card-border rounded-3xl p-7 lift block" href="./vc/">
+            <div class="text-xs font-black tracking-widest uppercase" style="color: var(--muted);">04</div>
+            <div class="mt-2 text-2xl font-black" style="color: var(--ink);">벤처캐피탈</div>
+            <div class="mt-3 text-sm leading-relaxed" style="color: var(--muted);">단계별 성장 지원을 지향합니다.</div>
+          </a>
         </div>
       </section>
     </main>
 
-    <footer class="foot">
-      <div class="wrap">
-        <div class="foot__grid">
-          <div>
-            <div class="foot__brand">말론투자</div>
-            <p class="foot__tel">고객센터 0000-0000-0000</p>
-            <p>평일 09:00–18:00</p>
-          </div>
-          <div>
-            <dl>
-              <div><dt>상호</dt><dd>말론투자</dd></div>
-              <div><dt>대표자</dt><dd>0000</dd></div>
-              <div><dt>사업자등록번호</dt><dd>0000-0000-0000</dd></div>
-              <div><dt>본사</dt><dd>0000</dd></div>
-              <div><dt>이메일</dt><dd>0000@0000.co.kr</dd></div>
-            </dl>
-            <p class="foot__legal">
-              말론투자는 금융투자업자가 아닌 유사투자자문업자로, 개별적인 투자상담과 자금운용을 할 수 없습니다.
-              투자 결과에 따라 원금 손실이 생길 수 있으며 그 손실은 투자자에게 돌아갑니다.
-              이 사이트의 정보는 투자 판단을 위한 참고 자료이며 수익을 보장하지 않습니다.
-            </p>
-            <p class="foot__copy">© <span data-year>2026</span> 말론투자</p>
-          </div>
+    <footer class="border-t" style="border-color: var(--line); background: rgba(255,255,255,.70); backdrop-filter: blur(10px);">
+      <div class="max-w-6xl mx-auto px-5 py-10">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div class="text-sm" style="color: var(--muted);">공지사항은 운영자만 등록하며 방문자는 열람만 가능합니다.</div>
+          <a class="btn-primary" href="../support/notice/">공지사항</a>
         </div>
+        <div class="mt-8 text-xs" style="color: rgba(91,107,133,.85);">© <span id="y"></span> 말론투자. All Rights Reserved.</div>
       </div>
     </footer>
-
-    <script src="../assets/app.js"></script>
+    <script>
+      document.getElementById("y").textContent = String(new Date().getFullYear());
+    </script>
   </body>
 </html>

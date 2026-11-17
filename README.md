@@ -23,7 +23,5 @@
 - 고객지원: `/support/` + 하위(`/support/notice/`, `/support/press/`)
 
 ## 스타일/폰트
-- 폰트: Google Fonts `Hahmlet`(제목) + `IBM Plex Sans KR`(본문)
-- 스타일: `assets/site.css` 한 파일. 색·글꼴·간격은 맨 위 `:root`에서 바꿉니다.
-- 스크립트: `assets/app.js`(메뉴·폼), `assets/notice.js`(공지 목록·상세)
-- 디자인 기준과 점검 결과: `DESIGN.md`
+- 폰트: Google Fonts `Noto Sans KR`
+- UI: Tailwind CDN(`https://cdn.tailwindcss.com`) 기반 + `assets/clone.css` 공통 디자인 시스템
