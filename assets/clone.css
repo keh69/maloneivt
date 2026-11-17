@@ -1,5 +1,8 @@
 .break-keep { word-break: keep-all; }
 
+/* 한글이 단어 중간에서 끊기지 않도록 (긴 영문/주소는 넘치지 않게 줄바꿈) */
+body { word-break: keep-all; overflow-wrap: break-word; }
+
 /*
   말론투자 공통 디자인 시스템
   - 여의도 투자그룹 레퍼런스의 "프리미엄/정돈된 섹션" 분위기를 참고하되, 그대로 복제하지 않고 재설계
@@ -317,3 +320,7 @@
 @media (prefers-reduced-motion: reduce) {
   .btn-primary, .btn-secondary, .btn-dark, .nav-link, .lift { transition: none !important; }
 }
+
+/* 고정 상단바에 가려지지 않도록 앵커 이동 시 여백 확보 */
+[id] { scroll-margin-top: 96px; }
+html { scroll-behavior: smooth; }

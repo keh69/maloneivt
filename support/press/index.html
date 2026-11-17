@@ -12,8 +12,9 @@
       tailwind.config = { theme: { extend: { fontFamily: { sans: ["Noto Sans KR", "ui-sans-serif", "system-ui"] } } } };
     </script>
     <link rel="stylesheet" href="../../assets/clone.css" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/malon-logo-icon-v4.svg" />
   </head>
-  <body class="font-sans mesh-bg text-slate-900">
+  <body class="font-sans mesh-bg text-slate-900 min-h-screen flex flex-col">
     <header class="fixed top-0 left-0 right-0 z-50">
       <div class="glass-header">
         <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
@@ -31,7 +32,7 @@
       </div>
     </header>
 
-    <main class="pt-[73px] max-w-6xl mx-auto px-5 py-14 md:py-20">
+    <main class="flex-1 w-full max-w-6xl mx-auto px-5 pt-[120px] pb-14 md:pt-[136px] md:pb-20">
       <div class="card-soft card-border rounded-3xl p-7 md:p-10">
         <div class="text-xs font-black tracking-widest uppercase" style="color: var(--muted);">Press</div>
         <h1 class="text-3xl md:text-4xl font-black mt-3" style="color: var(--ink);">보도자료</h1>
