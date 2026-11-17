@@ -38,7 +38,7 @@ function renderList(list) {
     const a = document.createElement("a");
     a.className =
       "block border border-slate-200 rounded-2xl p-5 bg-white hover:shadow-md transition-shadow";
-    a.href = "./detail.html?id=" + encodeURIComponent(n.id);
+    a.href = "./detail/?id=" + encodeURIComponent(n.id);
 
     const left = document.createElement("div");
     const title = document.createElement("b");

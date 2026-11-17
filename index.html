@@ -371,7 +371,7 @@
             .map((n) => {
               const date = String(n.date || "").replaceAll("-", ".");
               const pin = n.pinned ? '<span class="badge-pin">고정</span>' : "";
-              const href = "./support/notice/detail.html?id=" + encodeURIComponent(n.id || "");
+              const href = "./support/notice/detail/?id=" + encodeURIComponent(n.id || "");
               return `
                 <a class="card-soft card-border rounded-3xl p-7 lift block" href="${href}">
                   <div class="flex items-start justify-between gap-3">
